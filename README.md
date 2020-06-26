@@ -2,7 +2,7 @@
 Tkinter app that monitors the mouse cursor position in Windows.
 This is a Windows ONLY app.
 
-When you click "Start Monitor", it goes into a loop where it is constantly checking the mouse position. If the monitor loop is running, it will show "Stop Monitor, to stop the loop.
+When you click "Start Monitor", it goes into a loop where it is constantly checking the position of the mouse cursor as you move it around the screen. If the monitor loop is running, it will show "Stop Monitor, to stop the loop.
 
 Required packages for this program:
   - Pywin32
