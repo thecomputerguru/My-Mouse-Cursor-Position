@@ -23,14 +23,14 @@ class Program():    #Program functions
             bttn.config(text='Start Monitoring')
             Program.stop_mon()
 
-    def start_mon():
+    def start_mon():   #Start function
         global mon
         x,y = win32api.GetCursorPos()   #Get x and y coordinates of mouse cursor
         cursor_x_pos.config(text=x)
         cursor_y_pos.config(text=y)
         mon = root.after(100,Program.start_mon)  #Start monitoring mouse cursor
 
-    def stop_mon():
+    def stop_mon():    #Stop function
         root.after_cancel(mon)  #Stop program loop
         cursor_x_pos.config(text='')    #Reset labels
         cursor_y_pos.config(text='')
