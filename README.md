@@ -1,5 +1,6 @@
 # My-Mouse-Cursor-Position
 Tkinter app that monitors the mouse cursor position in Windows.
+This is a Windows ONLY app.
 
 Required packages for this program:
   - Pywin32
