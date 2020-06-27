@@ -23,14 +23,14 @@ class Program():    #Program functions
             bttn.config(text='Start Monitoring')
             Program.stop_mon()
 
-    def start_mon():   #Start function
+    def start_mon():    # Monitor cursor position
         global mon
         x,y = win32api.GetCursorPos()   #Get x and y coordinates of mouse cursor
-        cursor_x_pos.config(text=x)
-        cursor_y_pos.config(text=y)
-        mon = root.after(100,Program.start_mon)  #Start monitoring mouse cursor
+        cursor_x_pos.config(text=x)     #Write x coordinate of mouse cursor to label
+        cursor_y_pos.config(text=y)     #Write y coordinate of mouse cursor to label
+        mon = root.after(100,Program.start_mon)  #Loop function every 100 milliseconds
 
-    def stop_mon():    #Stop function
+    def stop_mon():
         root.after_cancel(mon)  #Stop program loop
         cursor_x_pos.config(text='')    #Reset labels
         cursor_y_pos.config(text='')
@@ -48,10 +48,10 @@ class Window(tk.Frame):         #Window layout
         cursor_x_pos = tk.Label(self.master,text='')
         cursor_y_pos = tk.Label(self.master,text='')
         bttn = tk.Button(self.master,text='Start Monitoring',command=Program.bttn)
-        cursor_x_lbl.place(x=30,y=20)
-        cursor_y_lbl.place(x=30,y=60)
-        cursor_x_pos.place(x=160,y=20)
-        cursor_y_pos.place(x=160,y=60)
+        cursor_x_lbl.place(x=55,y=20)
+        cursor_y_lbl.place(x=55,y=60)
+        cursor_x_pos.place(x=200,y=20)
+        cursor_y_pos.place(x=200,y=60)
         bttn.place(x=105,y=100)
 
 root = tk.Tk()                  #Start Tkinter interpreter and create top window
