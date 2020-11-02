@@ -1,6 +1,7 @@
 # Mouse Cursor Tracker
-Tkinter app that monitors the mouse cursor position in Windows.
-This is a Windows ONLY app.
+Tkinter app that monitors the mouse cursor position in Windows. This is a Windows ONLY app.
+
+NOTE: If you try to run this app in a different operating system other than Windows, an error message will appear.
 
 When you click "Start Monitor", it goes into a loop where it is constantly checking the position of the mouse cursor as you move it around the screen. If the monitor loop is running, it will show "Stop Monitor, to stop the loop.
 
