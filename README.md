@@ -1,4 +1,4 @@
-# My-Mouse-Cursor-Position
+# Mouse Cursor Tracker
 Tkinter app that monitors the mouse cursor position in Windows.
 This is a Windows ONLY app.
 
