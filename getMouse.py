@@ -3,10 +3,7 @@
 #Import required modules
 import tkinter as tk
 from tkinter import messagebox
-try:
-    import win32api # Module from Pywin32 package
-except:
-    mod_not_found = messagebox.showerror('Module not installed','Please install \"Pywin32\" with pip.')
+import platform
 
 running = False     #Monitoring mouse cursor movement is not running
 
@@ -41,7 +38,7 @@ class Window(tk.Frame):         #Window layout
         global bttn,cursor_x_pos,cursor_y_pos
         self.master = master
         self.master.geometry('310x150')
-        self.master.title('My Mouse Cursor Position')
+        self.master.title('Mouse Cursor Tracker')
 
         cursor_x_lbl = tk.Label(self.master,text='Cursor X Position:')
         cursor_y_lbl = tk.Label(self.master,text='Cursor Y Position:')
@@ -54,7 +51,18 @@ class Window(tk.Frame):         #Window layout
         cursor_y_pos.place(x=200,y=60)
         bttn.place(x=105,y=100)
 
-root = tk.Tk()                  #Start Tkinter interpreter and create top window
-app = Window(root)              #Initalize Tkinter window
-root.iconbitmap("cursor.ico")   #Window Titlebar Icon
-root.mainloop()                 #Actual program loop
+root = tk.Tk()
+if platform.system() != 'Windows':
+    root.withdraw()
+    messagebox.showerror('Incompatible Operating System','Please run this program on Microsoft Windows')
+    exit()
+else:
+    try:
+        import win32api # Module from Pywin32 package
+    except:
+        root.withdraw()
+        messagebox.showerror('Module Not Found','Please install \"Pywin32\" with pip')
+        exit()                 #Start Tkinter interpreter and create top window
+    app = Window(root)              #Initalize Tkinter window
+    root.iconbitmap("cursor.ico")   #Window Titlebar Icon
+    root.mainloop()                 #Actual program loop
