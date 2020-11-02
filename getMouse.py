@@ -51,7 +51,7 @@ class Window(tk.Frame):         #Window layout
         cursor_y_pos.place(x=200,y=60)
         bttn.place(x=105,y=100)
 
-root = tk.Tk()
+root = tk.Tk() #Start Tkinter interpreter and create top window
 if platform.system() != 'Windows':
     root.withdraw()
     messagebox.showerror('Incompatible Operating System','Please run this program on Microsoft Windows')
@@ -62,7 +62,7 @@ else:
     except:
         root.withdraw()
         messagebox.showerror('Module Not Found','Please install \"Pywin32\" with pip')
-        exit()                 #Start Tkinter interpreter and create top window
+        exit()                 
     app = Window(root)              #Initalize Tkinter window
     root.iconbitmap("cursor.ico")   #Window Titlebar Icon
     root.mainloop()                 #Actual program loop
